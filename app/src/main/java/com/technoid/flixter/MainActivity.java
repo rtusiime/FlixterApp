@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //Create the adapter
         final MovieAdapter movieAdapter = new MovieAdapter(this, movies);
         //Set the adapter on the recycler view
+
         rvMovies.setAdapter(movieAdapter);
         //set a Layout Manager on the recycler view
         rvMovies.setLayoutManager(new LinearLayoutManager(this));

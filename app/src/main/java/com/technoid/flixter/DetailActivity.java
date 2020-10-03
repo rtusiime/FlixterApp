@@ -36,7 +36,7 @@ public class DetailActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        tvDetailTitle = findViewById(R.id.tvDetailTitle);
+        tvDetailTitle = findViewById(R.id.tvTitle);
         tvOverview = findViewById(R.id.tvOverview);
         ratingBar = findViewById(R.id.ratingBar);
         youTubePlayerView = findViewById(R.id.player);
@@ -46,7 +46,7 @@ public class DetailActivity extends YouTubeBaseActivity {
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating((float) movie.getRating());
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get(String.format(VIDEOS_URL, 1234), new JsonHttpResponseHandler() {
+        client.get(String.format(VIDEOS_URL, movie.getMovieId()), new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Headers headers, JSON json) {
                 try {
