@@ -93,9 +93,10 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
             container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Log.e("onClick", "Clicky cliity click");
                     Toast.makeText(context, movie.getTitle(), Toast.LENGTH_LONG).show();
                     Intent i = new Intent(context, DetailActivity.class);
-                    i.putExtra("movie", Parcels.wrap(movies));
+                    i.putExtra("movie", Parcels.wrap(movie));
                     context.startActivity(i);
 
                 }
